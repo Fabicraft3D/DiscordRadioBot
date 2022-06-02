@@ -8,10 +8,7 @@ import lombok.Getter;
 public class ReadConfig {
     private String token;
     private String guild_id;
-    private String roleid1;
-    private String roleid2;
-    private String roleid3;
-    private String roleid4;
+    private String[] modRoles;
     private String standardchannel;
 
 

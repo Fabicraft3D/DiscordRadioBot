@@ -12,6 +12,10 @@ import net.dv8tion.jda.api.managers.AudioManager;
 import net.fabicraft3d.lavaplayer.PlayerManager;
 import net.fabicraft3d.utils.ConfigManager;
 import net.fabicraft3d.utils.ReadConfig;
+import sun.security.util.ArrayUtil;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Listener extends ListenerAdapter {
     @Getter
@@ -25,25 +29,18 @@ public class Listener extends ListenerAdapter {
         ReadConfig botConfig = new ConfigManager().readConfig();
         OptionMapping operator1 = event.getOption("sender");
         guild = event.getGuild();
-        assert guild != null;
-        VoiceChannel channel = guild.getVoiceChannelsByName("General", true).get(0);
-        AudioManager manager = guild.getAudioManager();
-
-        Role roleid1 = guild.getRoleById(botConfig.getRoleid1());
-        Role roleid2 = guild.getRoleById(botConfig.getRoleid2());
-        Role roleid3 = guild.getRoleById(botConfig.getRoleid3());
-        Role roleid4 = guild.getRoleById(botConfig.getRoleid4());
+        VoiceChannel channel = guild.getVoiceChannelById(botConfig.getStandardchannel());
 
         if (event.getName().equals("radio")) {
-            if (!event.getMember().getRoles().contains(roleid1) || !event.getMember().getRoles().contains(roleid2) || !event.getMember().getRoles().contains(roleid3) || !event.getMember().getRoles().contains(roleid4)) {
-                event.reply("KEINE RECHTE").queue();
+            if (event.getMember().getRoles().stream().noneMatch(role -> Arrays.stream(botConfig.getModRoles()).anyMatch(s -> s.equalsIgnoreCase(role.getId())))) {
+                event.reply("KEINE RECHTE").setEphemeral(true).queue();
                 return;
             }
+
             if (operator1 == null) {
                 return;
             }
             int sum = operator1.getAsInt() + 0;
-
 
 
             if (sum == 1) {
