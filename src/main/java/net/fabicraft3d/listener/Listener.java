@@ -13,7 +13,7 @@ import net.dv8tion.jda.api.managers.AudioManager;
 import net.fabicraft3d.DiscordMusicBot;
 import net.fabicraft3d.lavaplayer.PlayerManager;
 
-public class RadioCommand extends ListenerAdapter {
+public class SlashCommandListener extends ListenerAdapter {
     @Getter
     public Guild guild;
 
