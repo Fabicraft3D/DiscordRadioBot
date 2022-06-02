@@ -44,6 +44,8 @@ public class Listener extends ListenerAdapter {
             }
             int sum = operator1.getAsInt() + 0;
 
+
+
             if (sum == 1) {
                 PlayerManager.getInstance().getMusicManager(guild).scheduler.nextTrack();
                 event.reply("Standard-Radio wird nun Abgespielt").queue();

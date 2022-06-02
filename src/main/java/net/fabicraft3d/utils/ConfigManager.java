@@ -22,6 +22,7 @@ public class ConfigManager {
 
     }
 
+
     public ReadConfig readConfig() {
         if (!file.exists()) saveConfig();
 

@@ -17,6 +17,7 @@ import net.fabicraft3d.utils.ReadConfig;
 
 import javax.security.auth.login.LoginException;
 
+
 public class DiscordMusicBot extends ListenerAdapter {
     public static void main(String[] args) throws LoginException, InterruptedException {
         ReadConfig botConfig = new ConfigManager().readConfig();
