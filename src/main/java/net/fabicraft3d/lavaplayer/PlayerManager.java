@@ -46,6 +46,12 @@ public class PlayerManager {
             public void trackLoaded(AudioTrack audioTrack) {
                 musicManager.scheduler.queue(audioTrack);
                 System.out.println(audioTrack.getInfo().title);
+                System.out.println(audioTrack.getInfo().author);
+                System.out.println(audioTrack.getInfo().identifier);
+                System.out.println(audioTrack.getInfo().isStream);
+                System.out.println(audioTrack.getInfo().length);
+                System.out.println(audioTrack.getInfo().uri);
+                System.out.println(audioTrack.getInfo().toString());
 
             }
 
