@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DiscordMusicBot" />
+        <module name="DiscordRadioBot" />
       </profile>
     </annotationProcessing>
   </component>

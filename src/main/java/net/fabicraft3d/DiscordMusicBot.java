@@ -39,7 +39,10 @@ public class DiscordMusicBot extends ListenerAdapter {
 
         if (testServer != null) {
             testServer.upsertCommand("radio", "Spiele einen Radio Sender ab!").addOptions(new OptionData(OptionType.INTEGER, "sender", "Gebe die Sender Id ein", true)).queue();
+            testServer.upsertCommand("help", "Zeige eine Hilfreiche Nachricht an").queue();
+
         }
+
 
     }
 

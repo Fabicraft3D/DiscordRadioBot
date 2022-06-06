@@ -44,7 +44,7 @@ public class PlayerManager {
                             if (asJsonObject.get("stream_url").getAsString().equalsIgnoreCase(playingTrack.getInfo().uri)) {
                                 String title = asJsonObject.get("title").getAsString();
                                 String artist = asJsonObject.get("artist").getAsString();
-                                DiscordMusicBot.jda.getPresence().setActivity(Activity.listening(title + " - " + artist));
+                                DiscordMusicBot.jda.getPresence().setActivity(Activity.listening("\uD83C\uDFB5 " + artist + " - " + title + " \uD83C\uDFB5"));
                                 break;
                             }
                         }
